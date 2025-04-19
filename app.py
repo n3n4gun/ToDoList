@@ -1,6 +1,9 @@
+import uuid
+
 from flask import Flask
-from config import configurations
 from flask import render_template
+from config import configurations
+from db_agent import Agent
 
 main_app = Flask(__name__)
 main_app.config['SECRET_KEY'] = configurations['SECRET_KEY']
