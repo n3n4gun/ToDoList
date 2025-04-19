@@ -12,4 +12,4 @@ def index():
 
 @main_app.route('/add_task', methods = ['GET', 'POST'])
 def add_task():
-    return render_template('task.html', title = 'Создание задачи')
+    return render_template('task.html', title = 'Создание новой задачи')
