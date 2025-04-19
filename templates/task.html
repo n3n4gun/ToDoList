@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить задачу</title>
+    <link type="text/css" href="{{url_for('static', filename='css/task.css')}}" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Добавить новую задачу</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="back_link">
+            <a href="index">← Назад к списку задач</a>
+        </div>
+
+        <form id="task_form" class="task_form" action="/add_task" method="POST">
+            <div class="form_group">
+                <label for="task_title">Название задачи*</label>
+                <input type="text" id="task_title" name="title" required placeholder="Введите название задачи">
+            </div>
+
+            <div class="form_group">
+                <label for="task_description">Описание</label>
+                <textarea id="task_description" name="description" rows="4" placeholder="Добавьте описание задачи"></textarea>
+            </div>
+
+            <div class="form_group">
+                <label for="task_due_date">Срок выполнения</label>
+                <input type="date" id="task_due_date" name="dueDate">
+            </div>
+
+            <div class="form_group">
+                <label>Приоритет</label>
+                <div class="priority_options">
+                    <label class="priority_option">
+                        <input type="radio" name="priority" value="low" checked>
+                        <span class="priority_low">Низкий</span>
+                    </label>
+                    <label class="priority_option">
+                        <input type="radio" name="priority" value="medium">
+                        <span class="priority_medium">Средний</span>
+                    </label>
+                    <label class="priority_option">
+                        <input type="radio" name="priority" value="high">
+                        <span class="priority_high">Высокий</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form_actions">
+                <button type="submit" class="submit_btn">Сохранить задачу</button>
+                <button type="button" class="cancel_btn">Отмена</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Менеджер задач. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

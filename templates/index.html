@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%if title%}
+        <title>{{title}}</title>
+    {%else%}
+        <title>Менеджер задач</title>
+    {%endif%}
+    <link type="text/css" href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <div class="container">
+            {%if title%}
+                <h1>{{title}}</h1>
+            {%else%}
+                <h1>Менеджер задач</h1>
+            {%endif%}
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="task_controls">
+            <h2>Мои задачи</h2>
+            <button class="add_task_btn"><a href="add_task" class="add_task_btn">+ Добавить задачу</a></button>
+        </div>
+        
+        <div class="task_list">
+            <!-- Пример задачи (будет заменен динамическим содержимым) -->
+            <div class="task_item">
+                <div class="task_info">
+                    <input type="checkbox" class="task_checkbox">
+                    <div class="task_content">
+                        <div class="task_title">Пример задачи</div>
+                        <div class="task_description">Это пример описания задачи</div>
+                    </div>
+                </div>
+                <div class="task_actions">
+                    <button class="edit_btn" title="Редактировать">✏️</button>
+                    <button class="delete_btn" title="Удалить">🗑️</button>
+                </div>
+            </div>
+            
+            <!-- Место для динамического добавления задач -->
+            <div id="tasks_container"></div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Менеджер задач. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

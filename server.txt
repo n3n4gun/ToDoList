@@ -1,0 +1,12 @@
+Running server:
+    - uvicorn
+        uvicorn название файла:название приложения --reload
+        uvicorn os_api:OS_api --reload
+
+    - Flask
+        flask --app test.py run
+        flask --app main run --debug
+
+Creating and Running venv:
+    - python -m venv venv # Creating venv
+    - .\venv\Scripts\activate.bat # Activating venv
