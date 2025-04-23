@@ -14,7 +14,7 @@ def login():
     if 'userLogged' in session:
         return redirect(url_for('user_page', user_name = session['userLogged']))
     
-    elif request.form.get('user_name') == 'Admin' and request.form.get('password') == '12345':
+    elif request.form.get('user_name') == 'admin' and request.form.get('password') == '12345':
         session['userLogged'] = request.form.get('user_name')
         return redirect(url_for('user_page', user_name = session['userLogged']))
 
