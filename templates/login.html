@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%if title%}
+        <title>{{title}}</title>
+    {%else%}
+        <title>Менеджер задач</title>
+    {%endif%}
+    <link type="text/css" href="{{url_for('static', filename='css/login.css')}}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="auth_container">
+        <div class="auth_card">
+            <h1 class="auth_title">Вход в систему</h1>
+            
+            <form class="auth_form" action="/login" method="POST">
+                <div class="form_group">
+                    <label for="username">Логин</label>
+                    <input type="text" name="user_name" required placeholder="Введите ваш логин">
+                </div>
+                
+                <div class="form_group">
+                    <label for="password">Пароль</label>
+                    <input type="password" name="password" required placeholder="Введите ваш пароль">
+                </div>
+                
+                <div class="form_options">
+                    <label class="remember_me">
+                        <input type="checkbox" name="remember"> Запомнить меня
+                    </label>
+                    <a href="#" class="forgot_password">Забыли пароль?</a>
+                </div>
+                
+                <button type="submit" class="auth_button">Войти</button>
+            </form>
+            
+            <div class="auth_footer">
+                Нет аккаунта? <a href="/register" class="auth_link">Зарегистрируйтесь</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
