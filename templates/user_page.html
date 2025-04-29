@@ -6,14 +6,14 @@
     {%if user_name == 'Admin'%}
         <title>Федор</title>
     {%else%}
-        <title>{{user_name}}}</title>
+        <title>{{user_name}}</title>
     {%endif%}
     <link type="text/css" href="{{url_for('static', filename='css/user_page.css')}}" rel="stylesheet"/>
 </head>
 <body>
     <header>
         <div class="container">
-            {%if user_name == 'Admin'%}
+            {%if user_name == 'admin'%}
                 <h1>Ваши задачи, Федор</h1>
             {%else%}
                 <h1>Ваши задачи, {{user_name}}</h1>

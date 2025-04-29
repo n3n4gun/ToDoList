@@ -1,5 +1,4 @@
 configurations = {
     'SECRET_KEY' : '192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf',
-    'DB_TASKS' : 'tasks_db.db',
-    'DB_USERS' : 'users_db.db'
+    'TODO_DB' : 'todo_db.db',
 }
