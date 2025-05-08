@@ -10,7 +10,9 @@
     <div class="auth_container">
         <div class="auth_card">
             <h1 class="auth_title">Создать аккаунт</h1>
-            
+            {%for msg in get_flashed_messages()%}
+                <div class="flash">{{msg}}</div>
+            {%endfor%}
             <form class="auth_form" action="/registration" method="POST">
                 <div class="name_fields">
                     <div class="form_group">

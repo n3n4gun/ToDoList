@@ -39,6 +39,60 @@ header h1 {
     font-weight: 500;
 }
 
+/* Кнопка выхода */
+.logout_form {
+    margin: 0;
+}
+
+.logout_btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.logout_btn:hover {
+    background-color: #d33426;
+    transform: translateY(-1px);
+}
+
+.logout_btn:active {
+    transform: translateY(0);
+}
+
+/* Основное содержимое */
+.task_controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.task_controls h2 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.add_task_btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.add_task_btn:hover {
+    background-color: #2d9248;
+}
+
 /* Основное содержимое */
 .task_controls {
     display: flex;
@@ -116,7 +170,7 @@ header h1 {
     margin-bottom: 5px;
 }
 
-.task_description {
+.task_description, .task_terms {
     color: var(--dark-gray);
     font-size: 14px;
 }

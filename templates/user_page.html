@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%if user_name == 'Admin'%}
+    {%if user_name == 'admin'%}
         <title>Федор</title>
     {%else%}
         <title>{{user_name}}</title>
@@ -18,6 +18,9 @@
             {%else%}
                 <h1>Ваши задачи, {{user_name}}</h1>
             {%endif%}
+            <form action="/logout" method="POST" class="logout_form">
+                <button type="submit" class="logout_btn">Выйти</button>
+            </form>
         </div>
     </header>
     
@@ -29,20 +32,32 @@
         
         <div class="task_list">
             <!-- Пример задачи (будет заменен динамическим содержимым) -->
-            <div class="task_item">
-                <div class="task_info">
-                    <input type="checkbox" class="task_checkbox">
-                    <div class="task_content">
-                        <div class="task_title">Пример задачи</div>
-                        <div class="task_description">Это пример описания задачи</div>
+            {% if  user_tasks%}
+                {% for task in user_tasks %}
+                    <div class="task_item">
+                        <div class="task_info">
+                            <input type="checkbox" class="task_checkbox">
+                            <div class="task_content">
+                               <div class="task_title">{{task[0]}}</div>
+                               <div class="task_description">{{task[1]}}</div>
+                               <div class="task_terms">Когда: {{task[2]}}</div>
+                            </div>
+                        </div>
+                        <div class="task_actions">
+                           <button class="edit_btn" title="Редактировать">✏️</button>
+                           <button class="delete_btn" title="Удалить">🗑️</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="task_item">
+                    <div class="task_info">
+                        <div class="task_content">
+                            У вас пока нет задач, которые необходимо выполнить
+                        </div>
                     </div>
                 </div>
-                <div class="task_actions">
-                    <button class="edit_btn" title="Редактировать">✏️</button>
-                    <button class="delete_btn" title="Удалить">🗑️</button>
-                </div>
-            </div>
-            
+            {% endif %}
             <!-- Место для динамического добавления задач -->
             <div id="tasks_container"></div>
         </div>
